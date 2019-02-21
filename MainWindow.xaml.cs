@@ -39,7 +39,7 @@ namespace WPFMediaTest
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.MediaControl.SetStrech(Stretch.None);
+            this.MediaControl.SetStrech(Stretch.UniformToFill);
         }
     }
 }
