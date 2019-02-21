@@ -45,12 +45,13 @@ namespace WPFMediaTest
                 _mediaPlayer = new MediaPlayer();
                 videoDrawing = new VideoDrawing();
                 _mediaPlayer.MediaOpened += _mediaPlayer_MediaOpened;
-                //videoDrawing.Rect = new Rect(0, 0, this.ActualWidth, this.ActualHeight);
+                videoDrawing.Rect = new Rect(0, 0, this.ActualWidth, this.ActualHeight);
                 videoDrawing.Player = _mediaPlayer;
                 _Border = new Border();
                 brush = new DrawingBrush(videoDrawing);
-                brush.Stretch = Stretch.None;
-                RenderOptions.SetBitmapScalingMode(_Border, BitmapScalingMode.Fant);
+                brush.Stretch = Stretch.Fill;
+                RenderOptions.SetBitmapScalingMode(_Border, BitmapScalingMode.NearestNeighbor);
+                _Border.UseLayoutRounding = true;
                 Content = VideoBorder;
             }
 
@@ -83,7 +84,7 @@ namespace WPFMediaTest
 
         private void _mediaPlayer_MediaOpened(object sender, EventArgs e)
         {
-            videoDrawing.Rect = new Rect(0, 0, videoDrawing.Player.NaturalVideoWidth, videoDrawing.Player.NaturalVideoHeight);
+           // videoDrawing.Rect = new Rect(0, 0, videoDrawing.Player.NaturalVideoWidth, videoDrawing.Player.NaturalVideoHeight);
         }
 
         private void Begin()
