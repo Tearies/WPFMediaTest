@@ -34,7 +34,7 @@ namespace WPFMediaTest
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.MediaControl.SetStrech(Stretch.Uniform);
+           // this.MediaControl.SetStrech(Stretch.Uniform);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
